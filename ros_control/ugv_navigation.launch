@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="ros_control" type="object_detection.py" name="object_detection" output="screen"/>
+    <node pkg="ros_control" type="gps_navigation.py" name="gps_navigation" output="screen"/>
+</launch>
