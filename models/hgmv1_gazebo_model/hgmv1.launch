@@ -1,0 +1,13 @@
+<launch>
+  <arg name="world_file" default="$(find hgmv1_gazebo_model)/hgmv1.world"/>
+  
+  <node name="gazebo" pkg="gazebo_ros" type="gazebo" args="$(arg world_file)" required="true"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro $(find hgmv1_gazebo_model)/hgmv1.urdf" />
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+    <param name="publish_frequency" type="double" value="50.0"/>
+  </node>
+
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model hgmv1" />
+</launch>
