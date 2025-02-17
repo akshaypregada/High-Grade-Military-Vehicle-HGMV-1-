@@ -1,0 +1,8 @@
+(A) Launch Gazebo
+roslaunch hgmv1_gazebo_model hgmv1.launch
+
+(B) Start CNN Object Detection
+rosrun ros_control cnn_model.py
+
+(C) Start GPS Navigation
+rosrun ros_control gps_navigation.py
